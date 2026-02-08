@@ -1,6 +1,6 @@
 spring:
   application:
-    name: payment-api
+    name: book-api
 
 server:
   port: 9001
