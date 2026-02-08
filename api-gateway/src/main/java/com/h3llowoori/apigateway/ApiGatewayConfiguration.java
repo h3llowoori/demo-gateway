@@ -15,12 +15,12 @@ public class ApiGatewayConfiguration {
                         .order(1)
                         .path("/books/**")
                         .filters(f -> f.rewritePath("/books/(?<segment>.*)", "/v1/books/${segment}"))
-                        .uri("http://localhost:9001"))
+                        .uri("lb://book-api"))
                 .route("payment-api", r -> r
                         .order(1)
                         .path("/payments/**")
                         .filters(f -> f.rewritePath("/payments/(?<segment>.*)", "/v1/payments/${segment}"))
-                        .uri("http://localhost:9002"))
+                        .uri("lb://payment-api"))
                 .route("kakao-book-api", r -> r
                         .path("/kakao-books/**")
                         .filters(f -> f
