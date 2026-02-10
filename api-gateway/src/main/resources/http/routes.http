@@ -1,3 +1,26 @@
-# GET http://localhost:8080/books/111
+### JWT 발급
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "username": "hello",
+  "password": "world"
+}
+
+> {% client.global.set("authToken", response.body.token); %}
+
+### payment 조회
+GET http://localhost:8080/payments/2
+Authorization: Bearer {{authToken}}
+
+### book 조회
+GET http://localhost:8080/books/2
+Authorization: Bearer {{authToken}}
+
+### admin 조회
+GET http://localhost:8080/admin/3
+Authorization: Bearer {{authToken}}
+
+### GET http://localhost:8080/books/111
 GET http://localhost:8080/payments/222
-# GET http://localhost:8080/kakao-books/spring
+### GET http://localhost:8080/kakao-books/spring

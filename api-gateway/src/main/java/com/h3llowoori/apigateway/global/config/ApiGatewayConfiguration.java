@@ -1,4 +1,4 @@
-package com.h3llowoori.apigateway;
+package com.h3llowoori.apigateway.global.config;
 
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
